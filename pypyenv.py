@@ -86,6 +86,8 @@ help_message = """   pypyenv install - installs PyPy in this virtualenv
  pypyenv uninstall - uninstalls PyPy from this virtualenv"""
 
 def main():
+    args = sys.argv[1:] if 1 < len(sys.argv) else []
+
     if version != "2.7":
         if not raw_input("PyPy implements Python 2.7, you are using a " \
                          "different version, continue? [y/N] ") in yes:
